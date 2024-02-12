@@ -16,42 +16,43 @@ outputSize = nTraits
 
 # define your Bayesian Transformer model
 class BayesianTransformerModel(nn.Module):
-    def __init__(self, inputSize, outputSize, numLayers=6, hiddenSize=((nSNPs+nTraits)/2), numHeads=8, dropout=0.1):
+    def __init__(self, inputSize, outputSize, numLayers, hiddenSize, numHeads, dropout):
         super(BayesianTransformerModel, self).__init__()
-        self.input_size = inputSize
-        self.output_size = outputSize
-        self.hidden_size = hiddenSize
-        self.embedding = nn.Linear(inputSize, hiddenSize) # store embeddings
-        self.pos_encoding = PositionalEncoding(hidden_size, dropout=dropout) #accounts for marker loc
-        encoder_layer = nn.TransformerEncoderLayer(d_model=hidden_size, nhead=num_heads) #self attention and feedforward
-        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers) #stack of encoders
-        self.mean_decoder = nn.Linear(hidden_size, output_size)
-        self.log_var_decoder = nn.Linear(hidden_size, output_size)
+        
+        self.inputSize = inputSize
+        self.outputSize = outputSize
+        self.hiddenSize = (nSNPs+nTraits)/2
+        self.numLayers = numLayers
+        self.numHeads = numHeads
+        self.dropoutProb = dropout
+
+        # encoder layers
+        self.encoderLayers = nn.ModuleList([
+            nn.TransformerEncoderLayer(d_model=self.inputSize, nhead=self.numHeads, dim_feedforward=self.hiddenSize, dropout=self.dropoutProb)
+            for _ in range(self.numLayers)
+        ])
+        self.encoder = nn.TransformerEncoder(self.encoderLayers, numLayers=self.numLayers)
+
+        # embed environment 
+
+        # feedforward portion 
+
+        # output layer
+        self.outputLayer = nn.Linear(self.outputDim, self.outputDim)
         
     def forward(self, src):
-        src = self.embedding(src) * math.sqrt(self.hidden_size)
-        src = self.pos_encoding(src)
-        output = self.transformer_encoder(src)
-        mean_output = self.mean_decoder(output)
-        log_var_output = self.log_var_decoder(output)
-        return mean_output, log_var_output
-
-# positional encoding for Transformer
-class PositionalEncoding(nn.Module):
-    def __init__(self, d_model, dropout=0.1, max_len=5000):
-        super(PositionalEncoding, self).__init__()
-        self.dropout = nn.Dropout(p=dropout)
-        pe = torch.zeros(max_len, d_model)
-        position = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
-        div_term = torch.exp(torch.arange(0, d_model, 2).float() * (-math.log(10000.0) / d_model))
-        pe[:, 0::2] = torch.sin(position * div_term)
-        pe[:, 1::2] = torch.cos(position * div_term)
-        pe = pe.unsqueeze(0).transpose(0, 1)
-        self.register_buffer('pe', pe)
         
-    def forward(self, x):
-        x = x + self.pe[:x.size(0), :]
-        return self.dropout(x)
+        encoderOutput = self.encoder(inputData)
+
+        # Generate prior distribution for decoder input
+        priorMean = torch.zeros_like(encoderOutput)
+        priorStd = torch.ones_like(encoderOtput)
+        priorDistribution = Normal(priorMean, priorStd)
+        
+        # Sample from the prior distribution
+        input = priorDistribution.rsample()
+
+        
 
 
 # parameters
