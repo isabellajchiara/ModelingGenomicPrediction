@@ -1,0 +1,328 @@
+Taxa,CDBN_ID,Seq_ID,Gene_pool,Race,Market_class,Det_scr,GHmode,Earliest_Year_CDBN
+CDBN_001_1543,1543,CDBN_001,MA,Mesoamerican,Navy,2,2,1992
+CDBN_002_2242,2242,CDBN_002,Andean,Nueva Granada,Dark Red Kidney,1,1,1997
+CDBN_003_5229,5229,CDBN_003,MA,Durango,Red,2,3,1991
+CDBN_004_5501,5501,CDBN_004,MA,Durango,Pink,2,2.5,1993
+CDBN_005_54028,54028,CDBN_005,MA,Durango,Great Northern,2,3,1991
+CDBN_006_55012,55012,CDBN_006,MA,Durango,Pink,2,3,1994
+CDBN_007_88728,88728,CDBN_007,Andean,Nueva Granada,Light Red Kidney,2,2,1994
+CDBN_008_87_1116,87_1116,CDBN_008,MA,Durango,Great Northern,2,3,1994
+CDBN_009_88_409,88_409,CDBN_009,MA,Mesoamerican,Navy,2,2,1997
+CDBN_010_93_207G,93_207G,CDBN_010,MA,Durango,Great Northern,2,3,2000
+CDBN_011_93_208G,93_208G,CDBN_011,MA,Durango,Great Northern,2,3,2001
+CDBN_012_93_219P,93_219P,CDBN_012,MA,Durango,Pinto,2,3,2001
+CDBN_013_94_1009P,94_1009P,CDBN_013,MA,Durango,Pinto,2,3,2000
+CDBN_014_97_409P,97_409P,CDBN_014,MA,Durango,Pinto,2,3,2000
+CDBN_015_98_163G,98_163G,CDBN_015,MA,Durango,Great Northern,2,2,2001
+CDBN_016_98_209G,98_209G,CDBN_016,MA,Durango,Great Northern,2,3,2001
+CDBN_017_CO_64342,CO_64342,CDBN_017,MA,Durango,Pinto,2,3,2001
+CDBN_019_CPC_00153,CPC_00153,CDBN_019,Andean,Nueva Granada,Yellow,1,1,2003
+CDBN_020_CPC_00247,CPC_00247,CDBN_020,Andean,Nueva Granada,White Kidney,1,1,2004
+CDBN_021_CPC_00250,CPC_00250,CDBN_021,Andean,Nueva Granada,Yellow,1,1,2001
+CDBN_022_Cran34,Cran34,CDBN_022,Andean,Nueva Granada,Cranberry,1,1,1993
+CDBN_023_CU_M90,CU_M90,CDBN_023,MA,Mesoamerican,Black,2,2,1993
+CDBN_024_Elizabeth,Elizabeth,CDBN_024,MA,Durango,Pinto,2,3,1999
+CDBN_025_Flamingo,Flamingo,CDBN_025,MA,Durango,Pink,2,3,1989
+CDBN_026_Frigate,Frigate,CDBN_026,MA,Mesoamerican,Navy,2,2,2001
+CDBN_027_H9659_41_3,H9659_41_3,CDBN_027,Andean,Nueva Granada,Dark Red Kidney,2,2,2001
+CDBN_028_H9673_87,H9673_87,CDBN_028,MA,Mesoamerican,Black,2,2,2001
+CDBN_030_IS_4905_B,IS_4905_B,CDBN_030,MA,Mesoamerican,Navy,2,3,1995
+CDBN_031_IS_4907_Ba,IS_4907_Ba,CDBN_031,Andean,Nueva Granada,Light Red Kidney,1,1,1995
+CDBN_032_IS_4914_B,IS_4914_B,CDBN_032,MA,Durango,Great Northern,2,2,1995
+CDBN_033_IS_4923_B,IS_4923_B,CDBN_033,MA,Mesoamerican,Navy,2,3,1995
+CDBN_034_IS_4924_B,IS_4924_B,CDBN_034,MA,Mesoamerican,Navy,2,2,1995
+CDBN_035_ISB_1145,ISB_1145,CDBN_035,MA,Durango,Pinto,2,3,2001
+CDBN_036_ISB_1252,ISB_1252,CDBN_036,MA,Mesoamerican,Small White,2,2,2000
+CDBN_037_ISB_1256,ISB_1256,CDBN_037,MA,Mesoamerican,Small White,2,2,1999
+CDBN_038_ISB_1614,ISB_1614,CDBN_038,MA,Mesoamerican,Navy,1,1,1995
+CDBN_039_ISB_1814,ISB_1814,CDBN_039,MA,Mesoamerican,Navy,1,1,1996
+CDBN_040_ISB_2001,ISB_2001,CDBN_040,MA,Durango,Pinto,2,3,1995
+CDBN_041_ISB_23,ISB_23,CDBN_041,Andean,Nueva Granada,Cranberry,1,1,1993
+CDBN_042_ISB_254_1,ISB_254_1,CDBN_042,MA,Mesoamerican,Navy,2,2,1996
+CDBN_043_ISB_254_4,ISB_254_4,CDBN_043,MA,Mesoamerican,Navy,2,2,1995
+CDBN_044_ISB_2598,ISB_2598,CDBN_044,MA,Mesoamerican,Navy,1,1,2001
+CDBN_045_ISB_486,ISB_486,CDBN_045,MA,Mesoamerican,Navy,1,1,1991
+CDBN_046_ISB_5172,ISB_5172,CDBN_046,MA,Durango,Great Northern,2,2,2001
+CDBN_047_ISB_565,ISB_565,CDBN_047,MA,Mesoamerican,Navy,1,1,1991
+CDBN_048_ISB_5893,ISB_5893,CDBN_048,MA,Durango,Pinto,2,3,1999
+CDBN_049_UNS_117,UNS_117,CDBN_049,MA,Durango,Pink,2,3,1985
+CDBN_050_Aurora,Aurora,CDBN_050,MA,Mesoamerican,Navy,2,2,1982
+CDBN_051_AC_Calmont,AC_Calmont,CDBN_051,Andean,Nueva Granada,Dark Red Kidney,1,1,1998
+CDBN_052_Canario707,Canario707,CDBN_052,Andean,Nueva Granada,Yellow,1,1,2013
+CDBN_053_UI320,UI320,CDBN_053,MA,Durango,Pinto,2,3,1998
+CDBN_054_23ST_27,23ST_27,CDBN_054,MA,Durango,Pinto,2,3,2014
+CDBN_055_IP09_3,IP09_3,CDBN_055,MA,Durango,Pinto,2,2.5,2011
+CDBN_056_Jet_Black,Jet_Black,CDBN_056,MA,Mesoamerican,Black,2,2,2006
+CDBN_057_Linden,Linden,CDBN_057,Andean,Nueva Granada,Light Red Kidney,1,1,1986
+CDBN_058_Rio_Rojo,Rio_Rojo,CDBN_058,MA,Durango,Red,2,2,2012
+CDBN_059_SF103_8,SF103_8,CDBN_059,MA,Durango,Pinto,2,3,2014
+CDBN_060_Talon,Talon,CDBN_060,Andean,Nueva Granada,Dark Red Kidney,1,1,2014
+CDBN_061_Yeti,Yeti,CDBN_061,Andean,Nueva Granada,White Kidney,1,1,2014
+CDBN_062_Fathom,Fathom,CDBN_062,MA,Mesoamerican,Navy,2,3,2014
+CDBN_063_OAC_Inferno,OAC_Inferno,CDBN_063,Andean,Nueva Granada,Light Red Kidney,1,1,2011
+CDBN_064_Rexeter,Rexeter,CDBN_064,MA,Mesoamerican,Navy,2,2,2010
+CDBN_065_UI465,UI465,CDBN_065,MA,Durango,Great Northern,2,3,1997
+CDBN_066_Bellagio,Bellagio,CDBN_066,Andean,Nueva Granada,Cranberry,2,2,2010
+CDBN_067_ElDorado,ElDorado,CDBN_067,MA,Durango,Pinto,2,3,2014
+CDBN_068_Gypsy_Rose,Gypsy_Rose,CDBN_068,MA,Durango,Flor de Mayo,2,3,2014
+CDBN_069_Powderhorn,Powderhorn,CDBN_069,MA,Durango,Great Northern,2,2,2014
+CDBN_070_R12859,R12859,CDBN_070,MA,Durango,Red,2,3,2014
+CDBN_071_Snowdon,Snowdon,CDBN_071,Andean,Nueva Granada,White Kidney,1,1,2014
+CDBN_072_ISB_672,ISB_672,CDBN_072,MA,Mesoamerican,Navy,1,1,1991
+CDBN_073_ISB_721,ISB_721,CDBN_073,MA,Mesoamerican,Navy,1,1,1992
+CDBN_074_ISB_782,ISB_782,CDBN_074,MA,Mesoamerican,Navy,1,1,1991
+CDBN_075_ISB_782_1,ISB_782_1,CDBN_075,MA,Mesoamerican,Navy,1,1,1994
+CDBN_076_LB_4813_B,LB_4813_B,CDBN_076,MA,Mesoamerican,Navy,2,2,1995
+CDBN_077_LB_4815_B,LB_4815_B,CDBN_077,MA,Mesoamerican,Black,2,2,1995
+CDBN_078_Mogul,Mogul,CDBN_078,Andean,Nueva Granada,Dark Red Kidney,1,1,2005
+CDBN_079_Nichols,Nichols,CDBN_079,Andean,Nueva Granada,Dark Red Kidney,1,1,2001
+CDBN_080_Panther,Panther,CDBN_080,MA,Mesoamerican,Black,2,2,1991
+CDBN_081_Sprint,Sprint,CDBN_081,MA,Mesoamerican,Navy,1,1,1991
+CDBN_082_UIP7_24P_1P,UIP7_24P_1P,CDBN_082,MA,Durango,Pinto,2,3,2005
+CDBN_083_USPT_11_9,USPT_11_9,CDBN_083,MA,Durango,Pinto,2,2,2013
+CDBN_084_USPT_7_3,USPT_7_3,CDBN_084,MA,Durango,Pinto,2,3,1998
+CDBN_085_USPT_9_18,USPT_9_18,CDBN_085,MA,Durango,Pinto,2,2,2010
+CDBN_086_USWA_11,USWA_11,CDBN_086,MA,Durango,Red,2,3,1997
+CDBN_087_USWA_70,USWA_70,CDBN_087,Andean,Nueva Granada,White Kidney,1,1,1998
+CDBN_088_USWA_75,USWA_75,CDBN_088,Andean,Nueva Granada,White Kidney,1,1,1997
+CDBN_089_Claret,Claret,CDBN_089,MA,Durango,Red,2,2,2000
+CDBN_090_Redkloud,Redkloud,CDBN_090,Andean,Nueva Granada,Dark Red Kidney,1,1,1982
+CDBN_091_1062_V98,1062_V98,CDBN_091,Andean,Nueva Granada,Light Red Kidney,1,1,2006
+CDBN_092_1132_V96,1132_V96,CDBN_092,Andean,Nueva Granada,Light Red Kidney,1,1,2004
+CDBN_093_Isles,Isles,CDBN_093,Andean,Nueva Granada,Dark Red Kidney,1,1,1995
+CDBN_094_UCD_9830,UCD_9830,CDBN_094,Andean,Nueva Granada,Light Red Kidney,1,1,2002
+CDBN_095_Othello,Othello,CDBN_095,MA,Durango,Pinto,2,3,1984
+CDBN_096_Hungerford,Hungerford,CDBN_096,MA,Durango,Great Northern,2,3,2005
+CDBN_097_Gryphon,Gryphon,CDBN_097,MA,Mesoamerican,Navy,2,2,1990
+CDBN_098_OAC_Thunder,OAC_Thunder,CDBN_098,MA,Mesoamerican,Navy,2,2,1997
+CDBN_099_4533,4533,CDBN_099,MA,Durango,Pink,2,2,1985
+CDBN_100_6123,6123,CDBN_100,MA,Mesoamerican,Navy,1,1,1988
+CDBN_101_79146,79146,CDBN_101,MA,Durango,Pink,2,2,1986
+CDBN_102_83B16,83B16,CDBN_102,MA,Mesoamerican,Small White,2,2,1986
+CDBN_103_CO_12601,CO_12601,CDBN_103,MA,Mesoamerican,Small White,2,2,1985
+CDBN_104_D76125,D76125,CDBN_104,MA,Mesoamerican,Small White,2,2,1985
+CDBN_105_D77135B,D77135B,CDBN_105,MA,Durango,Great Northern,2,1,1984
+CDBN_106_D77196,D77196,CDBN_106,MA,Mesoamerican,Small White,2,2,1985
+CDBN_107_D79054,D79054,CDBN_107,MA,Mesoamerican,Small White,2,2,1985
+CDBN_108_GH760,GH760,CDBN_108,MA,Durango,Red,1,1,1984
+CDBN_109_ISB_1,ISB_1,CDBN_109,MA,Mesoamerican,Small White,1,1,1984
+CDBN_110_ISB_459,ISB_459,CDBN_110,MA,Durango,Pink,2,3,1985
+CDBN_111_ISB_730,ISB_730,CDBN_111,MA,Mesoamerican,Small White,1,1,1984
+CDBN_112_MRK44,MRK44,CDBN_112,Andean,Nueva Granada,Dark Red Kidney,1,1,1985
+CDBN_113_N81017,N81017,CDBN_113,MA,Mesoamerican,Small White,2,2,1984
+CDBN_114_UI60,UI60,CDBN_114,MA,Durango,Great Northern,2,NA,1981
+CDBN_115_AC_Skipper,AC_Skipper,CDBN_115,MA,Mesoamerican,Navy,1,1,1998
+CDBN_116_AC_Trident,AC_Trident,CDBN_116,MA,Mesoamerican,Small White,2,2,2000
+CDBN_117_Agate,Agate,CDBN_117,MA,Durango,Pinto,1,1,1981
+CDBN_118_Amber,Amber,CDBN_118,MA,Durango,Pinto,1,2,1981
+CDBN_120_CO_33142,CO_33142,CDBN_120,MA,Durango,Pinto,2,3,1988
+CDBN_121_Comet,Comet,CDBN_121,MA,Mesoamerican,Navy,2,2,2003
+CDBN_122_Ebony,Ebony,CDBN_122,MA,Mesoamerican,Black,2,2,1981
+CDBN_123_Fiero,Fiero,CDBN_123,Andean,Nueva Granada,Dark Red Kidney,1,1,1997
+CDBN_124_Fleetside,Fleetside,CDBN_124,MA,Mesoamerican,Navy,1,1,1993
+CDBN_125_H9659_21_1,H9659_21_1,CDBN_125,Andean,Nueva Granada,Light Red Kidney,2,2,2001
+CDBN_126_H9659_23_1,H9659_23_1,CDBN_126,Andean,Nueva Granada,Light Red Kidney,2,2,2001
+CDBN_127_H9659_37_2,H9659_37_2,CDBN_127,Andean,Nueva Granada,Dark Red Kidney,2,2,2001
+CDBN_128_L94C356,L94C356,CDBN_128,MA,Durango,Pink,2,2,1999
+CDBN_129_L95F025,L95F025,CDBN_129,MA,Mesoamerican,Black,2,2,2002
+CDBN_130_Monument,Monument,CDBN_130,MA,Mesoamerican,Small White,2,2,1985
+CDBN_131_Opal,Opal,CDBN_131,MA,Mesoamerican,Navy,2,2,1981
+CDBN_132_Pulsar,Pulsar,CDBN_132,MA,Mesoamerican,Small White,2,3,1984
+CDBN_133_RS101,RS101,CDBN_133,MA,Durango,Pinto,2,3,1987
+CDBN_134_Shetland,Shetland,CDBN_134,MA,Mesoamerican,Navy,2,2,1991
+CDBN_135_Spinel,Spinel,CDBN_135,MA,Durango,Great Northern,2,3,1983
+CDBN_136_UI137,UI137,CDBN_136,MA,Mesoamerican,Navy,2,2,1988
+CDBN_137_UI36,UI36,CDBN_137,MA,Durango,Red,2,2.5,1981
+CDBN_138_USBK_CBB_5,USBK_CBB_5,CDBN_138,MA,Mesoamerican,Black,2,2,1999
+CDBN_139_USPK_7_4,USPK_7_4,CDBN_139,MA,Durango,Pink,2,2,2007
+CDBN_141_USPT_8_15,USPT_8_15,CDBN_141,MA,Durango,Pinto,2,2.5,2011
+CDBN_142_USPT_8_6,USPT_8_6,CDBN_142,MA,Durango,Pinto,2,2.5,2011
+CDBN_143_USPT_9_6,USPT_9_6,CDBN_143,MA,Durango,Pinto,2,2,2011
+CDBN_144_USWA_20,USWA_20,CDBN_144,MA,Durango,Pinto,2,3,1996
+CDBN_145_C_20,C_20,CDBN_145,MA,Mesoamerican,Navy,2,2,1983
+CDBN_146_Fleetwood,Fleetwood,CDBN_146,MA,Mesoamerican,Navy,1,1,1983
+CDBN_147_USWA_50,USWA_50,CDBN_147,MA,Mesoamerican,Navy,2,3,1994
+CDBN_148_Valley,Valley,CDBN_148,MA,Durango,Great Northern,2,3,1981
+CDBN_149_WYO166,WYO166,CDBN_149,MA,Durango,Pinto,2,3,1981
+CDBN_150_WYO167,WYO167,CDBN_150,MA,Durango,Pinto,2,3,1983
+CDBN_151_Zircon,Zircon,CDBN_151,MA,Mesoamerican,Navy,2,2,1981
+CDBN_152_Isabella,Isabella,CDBN_152,Andean,Nueva Granada,Light Red Kidney,1,1,1982
+CDBN_153_Sacramento,Sacramento,CDBN_153,Andean,Nueva Granada,Light Red Kidney,1,1,1985
+CDBN_154_AC_Elk,AC_Elk,CDBN_154,Andean,Nueva Granada,Light Red Kidney,1,1,1997
+CDBN_155_Alpine,Alpine,CDBN_155,MA,Durango,Great Northern,2,2,1994
+CDBN_156_K42,K42,CDBN_156,Andean,Nueva Granada,Light Red Kidney,1,1,1985
+CDBN_157_Lisa,Lisa,CDBN_157,Andean,Nueva Granada,White Kidney,1,1,1988
+CDBN_158_SilverCloud,SilverCloud,CDBN_158,Andean,Nueva Granada,White Kidney,1,1,2005
+CDBN_159_Beluga,Beluga,CDBN_159,Andean,Nueva Granada,White Kidney,1,1,1998
+CDBN_160_NY_105,NY_105,CDBN_160,Andean,Nueva Granada,Light Red Kidney,1,1,2014
+CDBN_161_Rosie,Rosie,CDBN_161,Andean,Nueva Granada,Light Red Kidney,1,1,2014
+CDBN_162_RoyalRed,RoyalRed,CDBN_162,Andean,Nueva Granada,Dark Red Kidney,1,1,1985
+CDBN_163_Capri,Capri,CDBN_163,Andean,Nueva Granada,Cranberry,1,1,2006
+CDBN_164_Hooter,Hooter,CDBN_164,Andean,Nueva Granada,Cranberry,1,1,2001
+CDBN_165_Redhawk,Redhawk,CDBN_165,Andean,Nueva Granada,Dark Red Kidney,1,1,1998
+CDBN_166_RedKanner,RedKanner,CDBN_166,Andean,Nueva Granada,Dark Red Kidney,1,1,1996
+CDBN_167_UCD_0801,UCD_0801,CDBN_167,Andean,Nueva Granada,Cranberry,1,1,2011
+CDBN_168_Blush,Blush,CDBN_168,Andean,Nueva Granada,Light Red Kidney,1,1,2008
+CDBN_169_Hyden,Hyden,CDBN_169,MA,Mesoamerican,Navy,2,2,1982
+CDBN_170_Cardinal,Cardinal,CDBN_170,Andean,Nueva Granada,Cranberry,1,1,1992
+CDBN_171_CELRK,CELRK,CDBN_171,Andean,Nueva Granada,Light Red Kidney,1,1,1990
+CDBN_172_Majesty,Majesty,CDBN_172,Andean,Nueva Granada,Dark Red Kidney,2,2,2011
+CDBN_173_ND060197,ND060197,CDBN_173,MA,Durango,Pinto,2,3,2014
+CDBN_174_ND307,ND307,CDBN_174,MA,Durango,Pinto,2,3,2009
+CDBN_175_OAC_Seaforth,OAC_Seaforth,CDBN_175,MA,Mesoamerican,Navy,1,1,1994
+CDBN_176_Sapphire,Sapphire,CDBN_176,MA,Durango,Great Northern,2,3,1981
+CDBN_177_Topaz,Topaz,CDBN_177,MA,Durango,Pinto,2,2,1983
+CDBN_178_Seahawk,Seahawk,CDBN_178,MA,Mesoamerican,Navy,2,2,2002
+CDBN_179_Maverick,Maverick,CDBN_179,MA,Durango,Pinto,2,2,1995
+CDBN_180_Mayflower,Mayflower,CDBN_180,MA,Mesoamerican,Navy,2,2,1988
+CDBN_181_CO_11113,CO_11113,CDBN_181,MA,Mesoamerican,Black,2,2,2005
+CDBN_182_CO_1760,CO_1760,CDBN_182,MA,Durango,Great Northern,2,3,1991
+CDBN_183_CO_27864,CO_27864,CDBN_183,MA,Mesoamerican,Black,2,2,2005
+CDBN_184_CO_33875,CO_33875,CDBN_184,MA,Durango,Pinto,2,3,2009
+CDBN_185_CO_91212_4,CO_91212_4,CDBN_185,MA,Durango,Pinto,2,3,2014
+CDBN_186_53026,53026,CDBN_186,MA,Durango,Pinto,2,3,1993
+CDBN_187_55063,55063,CDBN_187,MA,Durango,Pink,2,3,1994
+CDBN_188_ISB_82_865,ISB_82_865,CDBN_188,Andean,Nueva Granada,Dark Red Kidney,1,1,1989
+CDBN_189_OAC_Lyrik,OAC_Lyrik,CDBN_189,Andean,Nueva Granada,Light Red Kidney,1,1,2008
+CDBN_191_Garnet,Garnet,CDBN_191,MA,Durango,Red,2,2.5,1981
+CDBN_192_Rojo_Chiquito,Rojo_Chiquito,CDBN_192,MA,Mesoamerican,Red,2,2,1995
+CDBN_193_Kodiak,Kodiak,CDBN_193,MA,Durango,Pinto,2,2,1998
+CDBN_194_Laker,Laker,CDBN_194,MA,Mesoamerican,Small White,1,1,1983
+CDBN_195_Lariat,Lariat,CDBN_195,MA,Durango,Pinto,2,2,2008
+CDBN_196_LeBaron,LeBaron,CDBN_196,MA,Durango,Red,2,2,1998
+CDBN_197_Lightning,Lightning,CDBN_197,MA,Mesoamerican,Navy,2,2,2008
+CDBN_198_Merlot,Merlot,CDBN_198,MA,Durango,Red,2,2,2003
+CDBN_199_Montrose,Montrose,CDBN_199,MA,Durango,Pinto,2,3,2000
+CDBN_200_N05324,N05324,CDBN_200,MA,Mesoamerican,Navy,2,2,2008
+CDBN_201_Newport,Newport,CDBN_201,MA,Mesoamerican,Navy,1,1,1996
+CDBN_202_Nodak,Nodak,CDBN_202,MA,Durango,Pinto,2,3,1982
+CDBN_203_OAC_Laser,OAC_Laser,CDBN_203,MA,Mesoamerican,Navy,2,2,1998
+CDBN_204_OAC_Rex,OAC_Rex,CDBN_204,MA,Mesoamerican,Navy,2,2,2004
+CDBN_205_Pindak,Pindak,CDBN_205,MA,Durango,Pinto,2,3,1982
+CDBN_206_Quincy,Quincy,CDBN_206,MA,Durango,Pinto,2,2,2008
+CDBN_207_Raven,Raven,CDBN_207,MA,Mesoamerican,Black,2,2,1995
+CDBN_208_Roza,Roza,CDBN_208,MA,Durango,Pink,2,3,2003
+CDBN_209_Sanilac,Sanilac,CDBN_209,MA,Mesoamerican,Navy,1,2,1981
+CDBN_210_Santa_Fe,Santa_Fe,CDBN_210,MA,Durango,Pinto,2,2,2008
+CDBN_211_Sawtooth,Sawtooth,CDBN_211,MA,Durango,Great Northern,2,3,2005
+CDBN_212_Seabiskit,Seabiskit,CDBN_212,MA,Mesoamerican,Small White,2,2,2005
+CDBN_213_Sedona,Sedona,CDBN_213,MA,Durango,Pink,2,2,2005
+CDBN_214_Sequoia,Sequoia,CDBN_214,MA,Durango,Pinto,2,2,2007
+CDBN_215_Shania,Shania,CDBN_215,MA,Mesoamerican,Black,2,2,2007
+CDBN_216_Shoshone,Shoshone,CDBN_216,MA,Durango,Pinto,2,3,2005
+CDBN_217_Stampede,Stampede,CDBN_217,MA,Durango,Pinto,2,2,2008
+CDBN_218_UCD_9634,UCD_9634,CDBN_218,MA,Durango,Pink,2,2,2012
+CDBN_219_UI111,UI111,CDBN_219,MA,Durango,Pinto,2,3,1982
+CDBN_220_UI126,UI126,CDBN_220,MA,Durango,Pinto,2,3,1981
+CDBN_221_UI196,UI196,CDBN_221,MA,Durango,Pinto,2,3,1984
+CDBN_222_UI425,UI425,CDBN_222,MA,Durango,Great Northern,2,3,1981
+CDBN_223_USPT_ANT_1,USPT_ANT_1,CDBN_223,MA,Durango,Pinto,2,3,2005
+CDBN_224_USPT_CBB_1,USPT_CBB_1,CDBN_224,MA,Durango,Pinto,2,3,2002
+CDBN_225_USRM_20,USRM_20,CDBN_225,MA,Durango,Red,2,3,2004
+CDBN_226_USWA_12,USWA_12,CDBN_226,MA,Durango,Great Northern,2,2,1996
+CDBN_227_Victor,Victor,CDBN_227,MA,Durango,Pink,2,3,1982
+CDBN_228_Zorro,Zorro,CDBN_228,MA,Mesoamerican,Black,2,2,2008
+CDBN_229_6R_42,6R_42,CDBN_229,MA,Durango,Pink,2,3,1985
+CDBN_230_Ivory,Ivory,CDBN_230,MA,Durango,Great Northern,2,3,1982
+CDBN_231_JM126,JM126,CDBN_231,MA,Durango,Pinto,2,3,1983
+CDBN_232_OAC_Gryphon,OAC_Gryphon,CDBN_232,MA,Mesoamerican,Navy,2,3,2000
+CDBN_233_Star,Star,CDBN_233,MA,Durango,Great Northern,2,3,1981
+CDBN_234_UC_BTS_96114,UC_BTS_96114,CDBN_234,MA,Mesoamerican,Black,2,2,2003
+CDBN_235_UCD_9623,UCD_9623,CDBN_235,MA,Durango,Flor de Mayo,2,2,2014
+CDBN_236_Rosetta,Rosetta,CDBN_236,MA,Durango,Pink,2,2,2012
+CDBN_237_Longs_Peak,Longs_Peak,CDBN_237,MA,Durango,Pinto,2,2,2011
+CDBN_238_Midnight,Midnight,CDBN_238,MA,Mesoamerican,Black,2,2,1982
+CDBN_239_Arthur,Arthur,CDBN_239,MA,Mesoamerican,Navy,2,2,1999
+CDBN_240_Norstar,Norstar,CDBN_240,MA,Mesoamerican,Navy,2,2,1990
+CDBN_241_AC_Ole,AC_Ole,CDBN_241,MA,Durango,Pinto,2,2,1997
+CDBN_242_AC_Pintoba,AC_Pintoba,CDBN_242,MA,Durango,Pinto,2,3,1998
+CDBN_243_Apache,Apache,CDBN_243,MA,Durango,Pinto,2,2.5,2011
+CDBN_244_Bandit,Bandit,CDBN_244,MA,Mesoamerican,Black,2,2,2006
+CDBN_245_Bighorn,Bighorn,CDBN_245,MA,Durango,Great Northern,2,3,2004
+CDBN_246_Blackhawk,Blackhawk,CDBN_246,MA,Mesoamerican,Black,2,2,1990
+CDBN_247_CDC_Crocus,CDC_Crocus,CDBN_247,MA,Durango,Great Northern,2,3,2000
+CDBN_248_CDC_Expression,CDC_Expression,CDBN_248,MA,Mesoamerican,Black,1,1,1996
+CDBN_249_CDC_Pinnacle,CDC_Pinnacle,CDBN_249,MA,Durango,Pinto,2,3,2000
+CDBN_250_CDC_Pintium,CDC_Pintium,CDBN_250,MA,Durango,Pinto,1,1,2001
+CDBN_251_CDC_Rosalee,CDC_Rosalee,CDBN_251,MA,Durango,Pink,2,2,2001
+CDBN_252_Condor,Condor,CDBN_252,MA,Mesoamerican,Black,2,2,2004
+CDBN_253_Coyne,Coyne,CDBN_253,MA,Durango,Great Northern,2,2,2011
+CDBN_254_Croissant,Croissant,CDBN_254,MA,Durango,Pinto,2,2,2008
+CDBN_255_Eclipse,Eclipse,CDBN_255,MA,Mesoamerican,Black,2,2,2004
+CDBN_256_Emerson,Emerson,CDBN_256,MA,Durango,Great Northern,2,3,1982
+CDBN_257_Envoy,Envoy,CDBN_257,MA,Mesoamerican,Navy,1,1,1993
+CDBN_258_Fiesta,Fiesta,CDBN_258,MA,Durango,Pinto,2,3,1981
+CDBN_259_Frontier,Frontier,CDBN_259,MA,Durango,Pinto,2,2,1997
+CDBN_260_Gala,Gala,CDBN_260,MA,Durango,Pinto,2,3,1981
+CDBN_261_GN9_1,GN9_1,CDBN_261,MA,Durango,Great Northern,2,2,2012
+CDBN_262_GN9_4,GN9_4,CDBN_262,MA,Durango,Great Northern,2,2,2013
+CDBN_263_Grand_Mesa,Grand_Mesa,CDBN_263,MA,Durango,Pinto,2,3,2002
+CDBN_264_Harold,Harold,CDBN_264,MA,Durango,Pink,2,3,1982
+CDBN_265_Hatton,Hatton,CDBN_265,MA,Durango,Pinto,2,3,1995
+CDBN_266_Holberg,Holberg,CDBN_266,MA,Durango,Pinto,2,3,1981
+CDBN_267_Huron,Huron,CDBN_267,MA,Mesoamerican,Navy,2,2,1996
+CDBN_268_ICB_10,ICB_10,CDBN_268,MA,Mesoamerican,Black,2,2,2000
+CDBN_269_IP08_2,IP08_2,CDBN_269,MA,Durango,Pinto,2,2,2009
+CDBN_270_Jackpot,Jackpot,CDBN_270,MA,Durango,Pinto,2,3,2007
+CDBN_271_Jaguar,Jaguar,CDBN_271,MA,Mesoamerican,Black,2,2,2000
+CDBN_272_Kimberly,Kimberly,CDBN_272,MA,Durango,Pinto,2,3,2007
+CDBN_273_Vista,Vista,CDBN_273,MA,Mesoamerican,Navy,2,2,1992
+CDBN_274_Viva,Viva,CDBN_274,MA,Durango,Pink,2,3,1981
+CDBN_275_Burke,Burke,CDBN_275,MA,Durango,Pinto,2,3,1997
+CDBN_276_JM24,JM24,CDBN_276,MA,Durango,Great Northern,2,3,1982
+CDBN_277_AC_Mast,AC_Mast,CDBN_277,MA,Mesoamerican,Small White,2,2,2000
+CDBN_278_Chinook2000,Chinook2000,CDBN_278,Andean,Nueva Granada,Light Red Kidney,1,1,1998
+CDBN_279_Cran09,Cran09,CDBN_279,Andean,Nueva Granada,Cranberry,1,1,1992
+CDBN_280_K407,K407,CDBN_280,Andean,Nueva Granada,Light Red Kidney,1,1,1985
+CDBN_281_K59,K59,CDBN_281,Andean,Nueva Granada,Light Red Kidney,1,1,1987
+CDBN_282_Kamiakin,Kamiakin,CDBN_282,Andean,Nueva Granada,Light Red Kidney,1,1,1985
+CDBN_283_Kardinal,Kardinal,CDBN_283,Andean,Nueva Granada,Light Red Kidney,1,1,1986
+CDBN_284_Lassen,Lassen,CDBN_284,Andean,Nueva Granada,White Kidney,1,1,1986
+CDBN_285_Montcalm,Montcalm,CDBN_285,Andean,Nueva Granada,Dark Red Kidney,1,1,1987
+CDBN_286_CDRK82,CDRK82,CDBN_286,Andean,Nueva Granada,Dark Red Kidney,1,1,1990
+CDBN_287_Centralia,Centralia,CDBN_287,MA,Mesoamerican,Navy,2,2,1990
+CDBN_288_Cygnus,Cygnus,CDBN_288,MA,Mesoamerican,Navy,1,1,1991
+CDBN_289_Harowood,Harowood,CDBN_289,MA,Mesoamerican,Navy,2,2,1990
+CDBN_290_UI259,UI259,CDBN_290,MA,Durango,Red,2,3,1997
+CDBN_291_UI722,UI722,CDBN_291,Andean,Nueva Granada,Dark Red Kidney,1,1,1992
+CDBN_292_White_Kidney,White_Kidney,CDBN_292,Andean,Nueva Granada,White Kidney,1,1,1985
+CDBN_293_AC_Compass,AC_Compass,CDBN_293,MA,Mesoamerican,Navy,2,2,1998
+CDBN_294_Arapaho,Arapaho,CDBN_294,MA,Durango,Pinto,2,2,1984
+CDBN_295_Avalanche,Avalanche,CDBN_295,MA,Mesoamerican,Navy,2,3,2008
+CDBN_296_Aztec,Aztec,CDBN_296,MA,Durango,Pinto,2,2,1994
+CDBN_297_Beryl,Beryl,CDBN_297,MA,Durango,Great Northern,2,3,1991
+CDBN_298_BillZ,BillZ,CDBN_298,MA,Durango,Pinto,2,3,1985
+CDBN_299_Buster,Buster,CDBN_299,MA,Durango,Pinto,2,3,1999
+CDBN_300_Chase,Chase,CDBN_300,MA,Durango,Pinto,2,3,1993
+CDBN_301_Crestwood,Crestwood,CDBN_301,MA,Mesoamerican,Navy,2,2,1992
+CDBN_302_Desert_Rose,Desert_Rose,CDBN_302,MA,Durango,Flor de Mayo,2,3,2005
+CDBN_303_Mackinac,Mackinac,CDBN_303,MA,Mesoamerican,Navy,2,2,1998
+CDBN_304_Matterhorn,Matterhorn,CDBN_304,MA,Durango,Great Northern,2,2,1998
+CDBN_305_Max,Max,CDBN_305,MA,Durango,Pinto,2,3,2005
+CDBN_306_Olathe,Olathe,CDBN_306,MA,Durango,Pinto,2,3,1982
+CDBN_307_Shiny_Crow,Shiny_Crow,CDBN_307,MA,Mesoamerican,Black,2,3,1998
+CDBN_308_Sierra,Sierra,CDBN_308,MA,Durango,Pinto,2,2,1988
+CDBN_309_Starlight,Starlight,CDBN_309,MA,Durango,Great Northern,2,3,1988
+CDBN_310_T_39,T_39,CDBN_310,MA,Mesoamerican,Black,2,3,2002
+CDBN_311_UI114,UI114,CDBN_311,MA,Durango,Pinto,2,3,1981
+CDBN_312_UI239,UI239,CDBN_312,MA,Durango,Red,2,3,1993
+CDBN_313_UI537,UI537,CDBN_313,MA,Durango,Pink,2,3,1989
+CDBN_314_UI59,UI59,CDBN_314,MA,Durango,Great Northern,2,3,1981
+CDBN_315_UI906,UI906,CDBN_315,MA,Mesoamerican,Black,2,2,1989
+CDBN_316_UI911,UI911,CDBN_316,MA,Mesoamerican,Black,2,2,1994
+CDBN_317_US1140,US1140,CDBN_317,MA,Durango,Great Northern,2,3,1983
+CDBN_318_Weihing,Weihing,CDBN_318,MA,Durango,Great Northern,2,2,1998
+CDBN_319_Yolano,Yolano,CDBN_319,MA,Durango,Pink,2,3,1988
+CDBN_320_115M,115M,CDBN_320,MA,Mesoamerican,Black,2,2,2003
+CDBN_321_Black_Jack,Black_Jack,CDBN_321,MA,Mesoamerican,Black,2,2,1993
+CDBN_322_Harblack,Harblack,CDBN_322,MA,Mesoamerican,Black,2,2,1991
+CDBN_323_Harris,Harris,CDBN_323,MA,Durango,Great Northern,2,3,1981
+CDBN_324_NW63,NW63,CDBN_324,MA,Durango,Red,2,3,1989
+CDBN_332_COSD_7,COSD_7,CDBN_332,MA,Durango,Pinto,NA,NA,2015
+CDBN_339_Dynasty,Dynasty,CDBN_339,Andean,Nueva Granada,Dark Red Kidney,NA,NA,2015
+CDBN_342_PT9_5_6,PT9_5_6,CDBN_342,MA,Durango,Pinto,NA,NA,2015
+CDBN_343_USPT11_13,USPT11_13,CDBN_343,MA,Durango,Pinto,2,3,2014
+CDBN_345_COSD_35,COSD_35,CDBN_345,MA,Durango,Pinto,NA,NA,2015
+CDBN_349_Zenith,Zenith,CDBN_349,MA,Mesoamerican,Black,NA,NA,2015
+CDBN_351_Alpena,Alpena,CDBN_351,MA,Mesoamerican,Navy,NA,NA,2015
+CDBN_353_USPT_7_8,USPT_7_8,CDBN_353,MA,Durango,Pinto,2,2,2007
