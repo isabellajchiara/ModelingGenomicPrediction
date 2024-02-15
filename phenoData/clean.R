@@ -1,15 +1,7 @@
 pheno = read.csv("phenotypesRaw.csv")
 
-#create loc by year env column
-for (x in length(locations)){
-  loc = locations[[x]]
-  newDF = pheno[(pheno$Location_code = loc),]
-  assign(paste0(loc), newDF)
-}
-
 env = list()
 for (x in 1:nrow(pheno)){
-  
   newcol = paste(pheno[x,1],pheno[x,2],sep = "")
   env[[x]] = newcol
 }
@@ -17,14 +9,7 @@ env = as.data.frame(env)
 env = t(env)
 data = cbind(env,pheno)
 
-#create a unique df for each env
-envList = list()
-for (x in 1:nrow(envsDF)){
-  x = envsDF[x,1]
-  df = data[(pheno$env = x),]
-  assign(paste0((x),df))
-  envList[[x]] = df
-}
+data = data[,-c(2,3,4,5,7,9,12:17)] #select desired variables
 
 x <- split(data,data$env)
 
@@ -33,7 +18,7 @@ environmentList=list()
 total = length(x)
 for (i in 1:total){
   environment = x[[i]]
-  rownames = environment[,6]
+  rownames = environment[,2]
   
   fix = which(rownames=="CDBN_090")
   if (length(fix) > 1) {
@@ -58,23 +43,14 @@ for (i in 1:total){
     change = fix4[[1]]
     rownames[[change]] = "CDBN_304A"
   }
-  
-  
-  environmentNew = environment[,-c(2,3,4,5,7,9,12:17)]
-  
-  rownames(environmentNew) = rownames 
-  environmentNew = as.data.frame(environmentNew)
-  environmentList[[i]] = environmentNew
-}
 
-### environmentList contains one dataframe for every environment. 
-### each data frame contains the env name, line ID, SY, SW, DM
-
-fullEnvironments= list()
-for (envt in environmentList) {
-  df = as.data.frame(environmentList[[envt]])
-  if (sum(is.na(df))) < 1 {
-    fullEnvironments[envt] = df
+  rownames(environment) = rownames 
+  environment = as.data.frame(environment)
+  if (sum(is.na(environment)) < 1){
+    environmentList[[i]] = environment
   }
+  
 }
+
+clean <- Filter(Negate(is.null), environmentList)
 
