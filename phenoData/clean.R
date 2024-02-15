@@ -69,3 +69,12 @@ for (i in 1:total){
 
 ### environmentList contains one dataframe for every environment. 
 ### each data frame contains the env name, line ID, SY, SW, DM
+
+fullEnvironments= list()
+for (envt in environmentList) {
+  df = as.data.frame(environmentList[[envt]])
+  if (sum(is.na(df))) < 1 {
+    fullEnvironments[envt] = df
+  }
+}
+
