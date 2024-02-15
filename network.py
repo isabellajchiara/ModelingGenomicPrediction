@@ -8,6 +8,8 @@ from torch.utils.data import DataLoader, Dataset
 import math
 from torch.distributions.normal import Normal
 
+
+
 genoTrain, genoTest, phenoTrian, phenoTest = train_test_split(Geno, pheno, train_size=0.7, shuffle=True)
 
 inputSize = nSNPs
@@ -35,12 +37,20 @@ class BayesianTransformerModel(nn.Module):
 
         # embed environment 
 
+        nEnv = 270  #
+        embeddingDim = 3
+        embedding = nn.Embedding(vocab_size, embedding_dim)
+        inputSequence = torch.tensor([geno1, geno2,...,genoN])
+        embeddedSequence = embedding(inputSequence)
+
+
         # feedforward portion 
+        self.bayesian_feedforward = nn.Linear(hiddenSize, hiddenSize)
 
         # output layer
         self.outputLayer = nn.Linear(self.outputDim, self.outputDim)
         
-    def forward(self, src):
+    def forward(self, inputData):
         
         encoderOutput = self.encoder(inputData)
 
@@ -52,6 +62,16 @@ class BayesianTransformerModel(nn.Module):
         # Sample from the prior distribution
         input = priorDistribution.rsample()
 
+
+        embedded = self.embedding(x)
+        encoded = self.encoder_layer(embedded)
+        
+        # Bayesian feedforward
+        bayesian_encoded = self.bayesian_feedforward(encoded)
+        
+        # Output layer
+        output = self.output_layer(bayesian_encoded)
+        return F.log_softmax(output, dim=-1)
         
 
 
