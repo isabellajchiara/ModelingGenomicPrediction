@@ -54,3 +54,9 @@ for (i in 1:total){
 
 clean <- Filter(Negate(is.null), environmentList)
 
+#create list of DF
+
+envs = list(clean.groupby("env")) 
+
+
+
