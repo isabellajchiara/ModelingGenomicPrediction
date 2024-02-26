@@ -3,16 +3,20 @@ envs = pheno.groupby("env") #list containing one array for each env
 
 location = pheno[pheno['env'].str.contains("NE")]
 
-genotypes = []
+val = 1
 chr = 1
-while chr < 12 :
-  for file in os.listdir(f'/projects/def-haricots/ich/CDBN/genotypes'):
+genotypes = []
+
+for file in os.listdir('/home/ich/projects/def-haricots/ich/CDBN/genotypes'):
+    file_name, file_ext = os.path.splitext(f)
     with open(f'chr{chr}.txt', 'r') as geno:
       geno = geno.read()
-      geno = pd.read_csv(io.StringIO(geno), sep='\s+') #produces a DF with one col per locus
-    genotypes.append(geno)
-    chr +=1 
-geno = pd.concat(genotypes)
+      array = pd.read_csv(io.StringIO(geno), sep='\s+')
+      chr +=1
+    genotypes.append(array)
+    val += 1
+    
+geno = pd.concat(genotypes) #huge DF containing all SNPs for all genotypes
 
 #genoPloidy = np.stack([genotypes], axis=2) #for more complex input in the future
 #params = tf.convert_to_tensor(genoPloidy) #for more complex input in the future
