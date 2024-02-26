@@ -17,6 +17,7 @@ for file in os.listdir('/home/ich/projects/def-haricots/ich/CDBN/genotypes'):
     val += 1
     
 geno = pd.concat(genotypes) #huge DF containing all SNPs for all genotypes
+geno['taxa'] = geno['taxa'].str[0:8] #make geno entry names match pheno entry names 
 
 #genoPloidy = np.stack([genotypes], axis=2) #for more complex input in the future
 #params = tf.convert_to_tensor(genoPloidy) #for more complex input in the future
