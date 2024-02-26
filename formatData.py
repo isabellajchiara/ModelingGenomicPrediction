@@ -1,29 +1,31 @@
-geno = pd.read_csv("simHaplo.csv")
-geno = pd.DataFrame(geno.drop('Unnamed: 0', axis=1))
+pheno = pd.read_csv("phenoEnvironmentDataClean.csv") #load data
+envs = pheno.groupby("env") #list containing one array for each env
 
-resp = pd.read_csv("simYieldData.csv")
-resp = resp.drop('Unnamed: 0', axis=1)
+location = pheno[pheno['env'].str.contains("NE")]
 
-nLoci = int(len(geno.columns))
-nInd = int(len(geno)/2)
-ploidy = 2
+genotypes = []
+chr = 1
+while chr < 12 :
+  for file in os.listdir(f'/projects/def-haricots/ich/CDBN/genotypes'):
+    with open(f'chr{chr}.txt', 'r') as geno:
+      geno = geno.read()
+      geno = pd.read_csv(io.StringIO(geno), sep='\s+') #produces a DF with one col per locus
+    genotypes.append(geno)
+    chr +=1 
+geno = pd.concat(genotypes)
 
-chr2 = np.empty([nInd, nLoci], dtype=int)
-chr1 = np.empty([nInd, nLoci], dtype=int)
-x = 1
+#genoPloidy = np.stack([genotypes], axis=2) #for more complex input in the future
+#params = tf.convert_to_tensor(genoPloidy) #for more complex input in the future
 
-while x < (len(geno)-2):
-    c1 = geno.iloc[x:(x+1),:] # pull row 1
-    c2 = geno.iloc[(x+1):(x+2),:] #pull row 2
-    chr1[x,]  = c1
-    chr2[x,] = c2
-    x+=2
-
-genoPloidy = np.stack([chr1,chr2], axis=2)
+data = location.merge(geno, left_on='Seq_ID', right_on='taxa') #merge data to pull genotypes present in a given envt
 
 
-params = tf.convert_to_tensor(genoPloidy)
+# separate X and Y
+X = data.drop(['taxa','SY','DM','SW','Unnamed: 0','env','Seq_ID'],axis=1) #genotypes only
+Y = data['DM'] #response variable only
 
+print(Y.head())
 
+xTrain, xTest, yTrain, yTest = train_test_split( X, Y, test_size=0.2)
 
 
