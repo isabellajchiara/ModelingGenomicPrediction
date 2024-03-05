@@ -1,7 +1,8 @@
 pheno = pd.read_csv("phenoEnvironmentDataClean.csv") #load data
-envs = pheno.groupby("env") #list containing one array for each env
+#envs = pheno.groupby("env") #list containing one array for each env
 
-location = pheno[pheno['env'].str.contains("NE")]
+pheno['env'] = pheno['env'].str[0:3] #removes years to just look at locs
+#location = pheno[pheno['env'].str.contains("NE")] #pull just one state
 
 val = 1
 chr = 1
@@ -23,10 +24,15 @@ os.chdir('/home/ich/projects/def-haricots/ich/CDBN')
 geno = pd.concat(genotypes) #huge DF containing all SNPs for all genotypes
 geno['taxa'] = geno['taxa'].str[0:8] #make geno entry names match pheno entry names 
 
+from sklearn.feature_selection import VarianceThreshold
+sel = VarianceThreshold(threshold=(.8 * (1 - .8)))    
+sel.fit_transform(geno)
+
+
 #genoPloidy = np.stack([genotypes], axis=2) #for more complex input in the future
 #params = tf.convert_to_tensor(genoPloidy) #for more complex input in the future
 
-data = location.merge(geno, left_on='Seq_ID', right_on='taxa') #merge data to pull genotypes present in a given envt
+data = pheno.merge(geno, left_on='Seq_ID', right_on='taxa') #merge data to pull genotypes present in a given envt
 
 
 # separate X and Y

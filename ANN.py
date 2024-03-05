@@ -1,7 +1,6 @@
 # Define hyperparameters
-cutoff = 200
-nEpoch = 100
-batchSize = 20 if len(geno) < cutoff else 500
+nEpoch = 1000
+batchSize = 50
 valSplit = 0.2
 learning_rate = 0.001  # You can adjust this learning rate as needed
 adam_optimizer = Adam(learning_rate=learning_rate)
