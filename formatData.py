@@ -25,8 +25,13 @@ geno = pd.concat(genotypes) #huge DF containing all SNPs for all genotypes
 geno['taxa'] = geno['taxa'].str[0:8] #make geno entry names match pheno entry names 
 
 from sklearn.feature_selection import VarianceThreshold
-sel = VarianceThreshold(threshold=(.8 * (1 - .8)))    
+sel = VarianceThreshold(threshold=(.91 * (1 - .9)))    
 sel.fit_transform(geno)
+
+from sklearn.impute import SimpleImputer
+imp = SimpleImputer(missing_values=np.nan, strategy='mean')
+imp.fit(geno)
+geno = pd.DataFrame(imp.transform(geno))
 
 
 #genoPloidy = np.stack([genotypes], axis=2) #for more complex input in the future
@@ -34,14 +39,12 @@ sel.fit_transform(geno)
 
 data = pheno.merge(geno, left_on='Seq_ID', right_on='taxa') #merge data to pull genotypes present in a given envt
 
+data.to_csv("cleanedTrainingSet.csv")
 
 # separate X and Y
 X = data.drop(['taxa','SY','DM','SW','Unnamed: 0','env','Seq_ID'],axis=1) #genotypes only
 Y = data['DM'] #response variable only
 
-imp = SimpleImputer(missing_values=np.nan, strategy='mean')
-imp.fit(X)
-X = pd.DataFrame(imp.transform(X))
 
 sel = VarianceThreshold(threshold=(.91 * (1 - .91)))  #remove cols with variance below 0.91
 X = sel.fit_transform(X)
