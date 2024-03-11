@@ -9,10 +9,7 @@ import math
 from torch.distributions.normal import Normal
 
 
-
-genoTrain, genoTest, phenoTrian, phenoTest = train_test_split(Geno, pheno, train_size=0.7, shuffle=True)
-
-inputSize = nSNPs
+inputSize = X.shape[1]
 outputSize = nTraits
 
 
