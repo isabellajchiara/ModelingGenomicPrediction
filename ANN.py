@@ -37,3 +37,6 @@ model = model.fit(
     verbose=0,
     validation_data=(x_valid, y_valid),
     callbacks=[early_stopping])
+
+for train, test in kFold.split(X, Y):
+    train_evaluate(model, X[train], Y[train], X[test], Y[test])
