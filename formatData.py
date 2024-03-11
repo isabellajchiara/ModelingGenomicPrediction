@@ -1,4 +1,4 @@
-pheno = pd.read_csv("phenoEnvironmentDataClean.csv") #load data
+pheno = pd.read_csv("SYphenoData.csv") #load data
 #envs = pheno.groupby("env") #list containing one array for each env
 
 pheno['env'] = pheno['env'].str[0:3] #removes years to just look at locs
@@ -33,7 +33,6 @@ imp = SimpleImputer(missing_values=np.nan, strategy='mean')
 imp.fit(geno)
 geno = pd.DataFrame(imp.transform(geno))
 
-
 #genoPloidy = np.stack([genotypes], axis=2) #for more complex input in the future
 #params = tf.convert_to_tensor(genoPloidy) #for more complex input in the future
 
@@ -42,8 +41,8 @@ data = pheno.merge(geno, left_on='Seq_ID', right_on='taxa') #merge data to pull 
 data.to_csv("cleanedTrainingSet.csv")
 
 # separate X and Y
-X = data.drop(['taxa','SY','DM','SW','Unnamed: 0','env','Seq_ID'],axis=1) #genotypes only
-Y = data['DM'] #response variable only
+X = data.drop(['taxa','SY','Unnamed: 0','env','Seq_ID'],axis=1) #genotypes only
+Y = data['SY'] #response variable only
 
 
 sel = VarianceThreshold(threshold=(.91 * (1 - .91)))  #remove cols with variance below 0.91
@@ -52,8 +51,8 @@ print(X.shape)
 
 
 
-xTrain, xTest, yTrain, yTest = train_test_split( X, Y, test_size=0.2)
-
+xTrain, xTest, yTrain, yTest = train_test_split( X, Y, test_size=0.3)
+xTest,xValid,yTest,yValid = train_test_split(xTest, yTest, test_size=0.5,shuffle=True)
 
 
 
