@@ -1,10 +1,15 @@
-#Ensemble across environments
+# separate X and Y
+X = data.drop(['taxa','SY','Unnamed: 0','Seq_ID'],axis=1) #genotypes only and keep env
+Y = data['SY','env'] #response variable only and keep env
 
-bigX = data.drop(['taxa','SY','DM','SW','Unnamed: 0','Seq_ID'],axis=1)
-bigY = data['DM','env'] #response variable only
+sel = VarianceThreshold(threshold=(.91 * (1 - .91)))  #remove cols with variance below 0.91
+xGeno = X.drop['env']
+xGeno = sel.fit_transform(xGeno)
+env = X['env']
 
-xTrain, xTest, yTrain, yTest = train_test_split(bigX, bigY, test_size=0.2,shuffle=True)
+X = pd.concat([env,xGeno])
 
+xTrain, xTest, yTrain, yTest = train_test_split( X, Y, test_size=0.3)
 
 modelPerformance = []
 modelPredictions = []
@@ -15,18 +20,13 @@ environments = pheno['envs'].unique().tolist()
 
 for env in environments:
 
-  location = bigX[bigX['env'] == env] #pull just one state
-  x = location.drop(['env'], axis=1) #drop env and leave only genotypes
+  locationGeno = xTrain[xTrain['env'] == env] #pull just one location for training
+  xTrain = locationGeno.drop(['taxa','SY','Unnamed: 0','env','Seq_ID'], axis=1) #drop all vars except geno 
 
-  y = bigY[bigY['env'] == env]
-  y = y.drop(['env'])
+  locationPheno = yTrain[yTrain['env'] == env] #pull just one location of phenotypes for training 
+  yTrain = y['SY']) #drop all vars except pheno
 
-  imp = SimpleImputer(missing_values=np.nan, strategy='mean')
-  imp.fit(x)
-  x = pd.DataFrame(imp.transform(x))
-  xTrain, xTest, _, _ = train_test_split( x, y, test_size=0.3) #split to train/test
-
-  model.fit(
+  model.fit(  #train model on our 1 loc 
     xTrain, yTrain,
     batch_size=batchSize,
     epochs=nEpoch,
@@ -34,7 +34,7 @@ for env in environments:
     validation_data=(xTrain, yTrain),
     callbacks=[early_stopping])
 
-    predictions = pd.DataFrame(model.predict(xTest))
+    predictions = pd.DataFrame(model.predict(xTest))#predict on test
 
     truth = yTest
     perf = predictions.corrwith(truth)
