@@ -2,7 +2,7 @@
 nEpoch = 1000
 batchSize = 50
 valSplit = 0.2
-learning_rate = 0.001  # You can adjust this learning rate as needed
+learning_rate = 0.01  # You can adjust this learning rate as needed
 adam_optimizer = Adam(learning_rate=learning_rate)
 
 # Add layers
@@ -35,5 +35,5 @@ model = model.fit(
     batch_size=batchSize,
     epochs=nEpoch,
     verbose=0,
-    validation_data=(x_train, y_train),
+    validation_data=(x_valid, y_valid),
     callbacks=[early_stopping])
