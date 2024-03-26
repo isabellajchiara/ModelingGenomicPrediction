@@ -1,5 +1,8 @@
+import dependencies.py
+import formatDataANN.py
+
 # Define hyperparameters
-nEpoch = 1000
+nEpoch = 100
 batchSize = 50
 valSplit = 0.2
 learning_rate = 0.01  # You can adjust this learning rate as needed
@@ -9,7 +12,7 @@ adam_optimizer = Adam(learning_rate=learning_rate)
 model = Sequential([
     Dense(units=xTrain.shape[1], activation='relu', input_shape=(xTrain.shape[1],)),
     Dropout(rate=0.05),
-    Dense(units=xTrain.shape[1], activation='relu'),
+    Dense(units=geno.shape[1], activation='relu'),
     Dropout(rate=0.05),
     Dense(units=1)
 ])
@@ -31,12 +34,13 @@ early_stopping = EarlyStopping(
 
 # Fit the model
 model = model.fit(
-    x_train, y_train,
+    xTrain, yTrain,
     batch_size=batchSize,
     epochs=nEpoch,
     verbose=0,
-    validation_data=(x_valid, y_valid),
+    validation_data=(xValid, yValid),
     callbacks=[early_stopping])
 
-for train, test in kFold.split(X, Y):
-    train_evaluate(model, X[train], Y[train], X[test], Y[test])
+scores = cross_val_score(model, X, Y, cv=5)
+scores = pd.DataFrame(scores)
+scores.to_csv("baseANNperf_SY.csv")
