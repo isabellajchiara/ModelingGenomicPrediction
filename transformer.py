@@ -1,9 +1,9 @@
-import dependencies.py
-import transformerBlocks.py
-import transformerBuild.py
-import transformerEncoderDecoder.py
-import formatDataANN.py
-import 
+exec(open("dependencies.py").read())
+exec(open("transformerBlocks.py").read())
+exec(open("transformerBuild.py").read())
+exec(open("transformerEncoderDecoder.py").read())
+exec(open("formatDataANN.py").read())
+
 
 nSNP = X.shape[1]
 targetVar = 1
