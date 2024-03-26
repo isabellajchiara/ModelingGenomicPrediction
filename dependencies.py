@@ -21,7 +21,7 @@ import torch
 import torch.nn as nn
 
 from sklearn.model_selection import train_test_split
-from sklearn.model_selection import cross_val_predict
+from sklearn.model_selection import cross_val_score
 from sklearn.impute import SimpleImputer
 from sklearn import decomposition, datasets
 from sklearn.feature_selection import VarianceThreshold
