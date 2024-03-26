@@ -1,15 +1,6 @@
-import torch
-import torch.nn as nn
-import torch.optim as optim
-import torch.utils.data as data
-import math
-import copy
 
-nSNPs = 
-d_model = nSNPs
-num_heads = 
 
- #attention between each pair of positionsin a sequence 
+#attention between each pair of positionsin a sequence 
 class MultiHeadAttention(nn.Module):
     def __init__(self, d_model, num_heads):
         super(MultiHeadAttention, self).__init__()
