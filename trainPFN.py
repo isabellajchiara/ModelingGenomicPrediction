@@ -8,7 +8,7 @@ np.random.seed(0)
 min_training_samples = 100
 max_training_samples = 500
 
-prior = priorGenerator(geno,pheno)
+prior = priorDescribe(geno,pheno)
 
 num_batches = -(pheno.shape[0] // -10)
 
