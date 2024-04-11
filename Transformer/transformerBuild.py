@@ -4,8 +4,9 @@ class Transformer(nn.Module):
 
         self.encoder_embedding = nn.Embedding(nSNP, d_model)
         self.positional_encoding = PositionalEncoding(d_model, max_seq_length)
-        self.encoder_layers = nn.ModuleList([EncoderLayer(d_model, num_heads, d_ff, dropout) for _ in range(num_layers)])
-        self.fc = nn.Linear(d_model, targetVar)
+        self.encoder_layers = nn.ModuleList([EncoderLayer(d_model, num_heads, d_ff, dropout) for _ in range(num_layers)]) #calls AttentionHead
+        self.fc = nn.Linear(nSNP)
+        self.fc =nn.Linear(1)
         self.dropout = nn.Dropout(dropout)
 
 
