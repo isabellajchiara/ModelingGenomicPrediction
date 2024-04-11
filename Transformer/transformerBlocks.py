@@ -1,6 +1,6 @@
 
 
-#attention between each pair of positionsin a sequence 
+#attention between each pair of positions in a sequence 
 
 class MultiHeadAttention(nn.Module):
     def __init__(self, d_model, num_heads):
