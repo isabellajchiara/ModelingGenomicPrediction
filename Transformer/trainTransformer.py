@@ -1,7 +1,6 @@
 exec(open("dependencies.py").read())
 exec(open("transformerBlocks.py").read())
 exec(open("transformerBuild.py").read())
-exec(open("createTrainTest.py").read())
 
 data = pd.read_csv("fullDatasetSY.csv")
 data = data.drop(list(data)[0:2], axis=1) #remove useless columns
