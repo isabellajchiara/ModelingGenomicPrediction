@@ -12,10 +12,7 @@ from sklearn.feature_selection import SelectFromModel
 from sklearn.model_selection import train_test_split
 
 pheno = pd.read_csv("SWphenoData.csv") #load data
-#envs = pheno.groupby("env") #list containing one array for each env
-
 pheno['env'] = pheno['env'].str[0:2] #removes years to just look at locs
-#location = pheno[pheno['env'].str.contains("NE")] #pul
 val = 1
 chr = 1
 genotypes = []
@@ -49,12 +46,10 @@ geno = pd.DataFrame(imp.transform(geno))
 featureNames = list(geno.columns)
 geno.columns = featureNames
 
-
 pca = PCA(n_components=3000,svd_solver='full')
 model = pca.fit(geno)
 genoReduced = model.transform(geno)
 genoReduced  = pd.DataFrame(genoReduced)
-
 n_pcs= model.components_.shape[0]
 
 most_important = [np.abs(model.components_[i]).argmax() for i in range(n_pcs)]
@@ -66,25 +61,13 @@ entryNames = pd.DataFrame(entryNames)
 geno.reset_index(drop=True,inplace=True)
 entryNames.reset_index(drop=True,inplace=True)
 
-#genoPloidy = np.stack([genotypes], axis=2) #for more complex input in the futu>
-#params = tf.convert_to_tensor(genoPloidy) #for more complex input in the future
 
 geno = pd.concat([entryNames,geno],axis=1)
-
 geno.to_csv("preprocessedGenoData.csv")
-
 print("labeled geno data")
 
-#geno = pd.read_csv("preprocessedGenoData.csv")
 
 envs = pheno["env"].unique().tolist()
-
-
-xTrainAll = list()
-yTrainAll = list()
-
-xEvalAll = list()
-yEvalAll = list()
 
 fullDataset= list()
 
@@ -104,20 +87,7 @@ for env in envs:
       xEvalAll.append(xTest)
       yEvalAll.append(yTest)
 
-xTrainAll = np.concatenate(xTrainAll)
-yTrainAll = np.concatenate(yTrainAll)
-xEvalAll = np.concatenate(xEvalAll)
-yEvalAll = np.concatenate(yEvalAll)
+
 fullDataset = np.concatenate(fullDataset)
-
-xTrainAll = pd.DataFrame(xTrainAll)
-yTrainAll = pd.DataFrame(yTrainAll)
-xEvalAll = pd.DataFrame(xEvalAll)
-yEvalAll = pd.DataFrame(yEvalAll)
 fullDataset = pd.DataFrame(fullDataset)
-
-xTrainAll.to_csv("xTrainSY.csv")
-yTrainAll.to_csv("yTrainSY.csv")
-xEvalAll.to_csv("xTestSY.csv")
-yEvalAll.to_csv("yTestSY.csv")
 fullDataset.to_csv("fullDatasetSW.csv")
