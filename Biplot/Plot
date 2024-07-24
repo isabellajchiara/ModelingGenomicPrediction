@@ -1,0 +1,9 @@
+library(ggplot2)
+library(patchwork) 
+library(metan)
+
+gge_model <- gge(data, location, genotype, SY)
+
+h <- plot(gge_model,
+          type = 10)
+h <- h + ggtitle(paste0("Rank Environments\n(Seed Yield")
