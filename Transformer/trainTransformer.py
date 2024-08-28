@@ -3,9 +3,9 @@ exec(open("transformerBlocks.py").read())
 exec(open("transformerBuild.py").read())
 
 data = pd.read_csv("SYdataTF.csv")
-data = data.drop(list(data)[0:2], axis=1) #remove useless columns
+data = data.drop(list(data)[0:1], axis=1) #remove useless columns
 
-nSNPs = len(data.columns) -2
+nSNPs = len(data.columns) - 1
 print("there are",len(data["1"].unique()), "locations")
 print("there are", len(data["2"].unique()),"genotypes")
 print("there are",(len(data.columns) -2), "SNP markers")
@@ -14,8 +14,8 @@ print("there are",len(data),"total observations across all environments")
 X = data.drop(["1","2","3"], axis=1)
 X = X.replace({0.0:-1,int(1.0):0,2.0:int(1)})
 
-X = np.array(data.drop(["1","2","3"], axis=1))
-y = np.array(data["3"])
+X = np.array(data.drop(["0"], axis=1))
+y = np.array(data["0"])
 
 xTrain, xTest, yTrain, yTest = train_test_split(X, y, test_size=0.33, shuffle=True)
 
@@ -25,34 +25,14 @@ xTest = np.array(xTest)
 yTest = np.array(yTest)
 
 
-class CDBNDataset(torch.utils.data.Dataset):
-  '''
-  Prepare the CDBN dataset for regression
-  '''
-
-  def __init__(self, X, y, scale_data=True):
-    if not torch.is_tensor(X) and not torch.is_tensor(y):
-      # Apply scaling if necessary
-      if scale_data:
-          X = StandardScaler().fit_transform(X)
-      self.X = torch.from_numpy(X)
-      self.y = torch.from_numpy(y)
-
-  def __len__(self):
-      return len(self.X)
-
-  def __getitem__(self, i):
-      return self.X[i], self.y[i]
-
 
 dataset = CDBNDataset(X, y)
 datasetTest = CDBNDataset(xTest,yTest)
 trainloader = torch.utils.data.DataLoader(dataset, batch_size=10, shuffle=True, num_workers=1,drop_last=True)
 testloader = torch.utils.data.DataLoader(dataset, batch_size=10, shuffle=True, num_workers=1,drop_last=True)
 
-geno = data.drop(['1','2','3'],axis=1)
+geno = data.drop(['0'],axis=1)
 
-nSNPs = nSNPs-1
 
 xTrain = torch.from_numpy(xTrain)
 xTest = torch.from_numpy(xTest)
@@ -61,10 +41,10 @@ yTest = torch.from_numpy(yTest)
 
 src_vocab_size = nSNPs
 tgt_vocab_size = 1
-d_model = 512
-num_heads = 8
+d_model = 3
+num_heads = 1
 num_layers = 6
-d_ff = 2048
+d_ff = 20
 max_seq_length = 100
 dropout = 0.1
 
