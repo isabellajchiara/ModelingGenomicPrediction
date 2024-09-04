@@ -1,24 +1,3 @@
-
-class CDBNDataset(torch.utils.data.Dataset):
-  '''
-  Prepare the CDBN dataset for regression
-  '''
-
-  def __init__(self, X, y, scale_data=True):
-    if not torch.is_tensor(X) and not torch.is_tensor(y):
-      # Apply scaling if necessary
-      if scale_data:
-          X = StandardScaler().fit_transform(X)
-      self.X = torch.from_numpy(X)
-      self.y = torch.from_numpy(y)
-
-  def __len__(self):
-      return len(self.X)
-
-  def __getitem__(self, i):
-      return self.X[i], self.y[i]
-
-
 #attention between each pair of positions in a sequence 
 
 class MultiHeadAttention(nn.Module):
@@ -113,17 +92,17 @@ class EncoderLayer(nn.Module):
         self.norm2 = nn.LayerNorm(d_model)
         self.dropout = nn.Dropout(dropout)
 
-    def forward(self, x, mask):
-        attn_output = self.self_attn(x, x, x, mask)
+    def forward(self, x):
+        attn_output = self.self_attn(x, x, x)
         x = self.norm1(x + self.dropout(attn_output))
         ff_output = self.feed_forward(x)
         x = self.norm2(x + self.dropout(ff_output))
         return x
 
-def forward(self, x, enc_output, src_mask, tgt_mask):
-    attn_output = self.self_attn(x, x, x, tgt_mask)
+def forward(self, x, enc_output):
+    attn_output = self.self_attn(x, x, x)
     x = self.norm1(x + self.dropout(attn_output))
-    attn_output = self.cross_attn(x, enc_output, enc_output, src_mask)
+    attn_output = self.cross_attn(x, enc_output, enc_output)
     x = self.norm2(x + self.dropout(attn_output))
     ff_output = self.feed_forward(x)
     x = self.norm3(x + self.dropout(ff_output))
