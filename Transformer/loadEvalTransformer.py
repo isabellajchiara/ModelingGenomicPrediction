@@ -2,8 +2,8 @@
 
 data = pd.read_csv("tokenTrainingSY.csv")
 
-xTest = data.drop(['Unnamed: 0','2','3'], axis=1)
-yTest = data['3']
+X = data.drop(['Unnamed: 0','2','3'], axis=1)
+y = data['3']
 
 nSNPs = X.shape[1] 
 
@@ -30,14 +30,14 @@ transformer = torch.load("transformer.pth")
 transformer.eval()
 
 #test data must be same format as train data
-X = torch.tensor(xTest.values)
-y = torch.tensor(yTest.values)
+Xtensor= torch.tensor(X.values)
+ytensor = torch.tensor(y.values)
 
 with torch.no_grad():
-    prediction = transformer(X, y)
+    prediction = transformer(Xtensor, ytensor)
 
 prediction = prediction[:,0,0]
 
-accuracy = pearsonr(prediction,yTest)
+accuracy = pearsonr(prediction,y)
 
 
