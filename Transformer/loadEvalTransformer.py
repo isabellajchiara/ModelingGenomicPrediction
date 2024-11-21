@@ -5,9 +5,12 @@ data = pd.read_csv("tokenTrainingSY.csv")
 X = data.drop(['Unnamed: 0','2','3'], axis=1)
 y = data['3']
 
-nSNPs = X.shape[1] 
+stacked = X.stack().unique()
+unique = stacked.shape[0]
 
-src_vocab_size = nSNPs
+
+
+src_vocab_size = unique
 tgt_vocab_size = 1
 d_model = 100
 num_heads = 2
@@ -34,7 +37,7 @@ Xtensor= torch.tensor(X.values)
 ytensor = torch.tensor(y.values)
 
 with torch.no_grad():
-    prediction = transformer(Xtensor, ytensor)
+    prediction = transformer(Xtensor)
 
 prediction = prediction[:,0,0]
 
