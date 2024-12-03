@@ -13,12 +13,12 @@ unique = stacked.shape[0]
 
 
 
-src_vocab_size = unique
+src_vocab_size = int(unique)
 tgt_vocab_size = 1
-d_model = 200
+d_model = 50
 num_heads = 5
-num_layers = 5
-d_ff = 100
+num_layers = 2
+d_ff = 50
 max_seq_length = X.shape[1]
 dropout = 0.1
 
