@@ -15,5 +15,34 @@ stacked = X.stack().unique()
 unique = stacked.shape[0]
 weights = getWeights(data)
 
+import itertools
+import torch
+from torch.utils.data import DataLoader, TensorDataset
+from sklearn.model_selection import KFold
+from scipy.stats import pearsonr
+import pandas as pd
+import csv
+from concurrent.futures import ProcessPoolExecutor
+
+# Parameter grid
+d_modelList = [100, 300, 500]
+num_headsList = [1, 2, 5]
+num_layersList = [2, 3, 5]
+d_ffList = [100, 300, 500]
+dropoutList = [0.01, 0.05, 0.1]
+lrList = [0.001, 0.01, 0.1]
+
+param_grid = list(itertools.product(d_modelList, num_headsList, num_layersList, d_ffList, dropoutList, lrList))
+
+params = optimizeTransformer(params)
+params
+
+d_model = d_model
+num_heads = num_heads
+num_layers = num_layers
+d_ff=  d_ff
+dropout = dropout
+lr = lr
+
 model, accuracy = trainTest5Fold(X,y)
 
