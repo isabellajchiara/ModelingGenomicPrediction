@@ -44,6 +44,8 @@ class MultiHeadAttention(nn.Module):
         V = self.split_heads(self.W_v(V))
         
         # Perform scaled dot-product attention
+        global attn_scores
+
         attn_output = self.scaled_dot_product_attention(Q, K, V)
         
         # Combine heads and apply output transformation
@@ -93,3 +95,9 @@ class EncoderLayer(nn.Module):
         x = self.norm2(x + self.dropout(ff_output))
         return x
 
+def initialize_attention_weights(module):
+    if isinstance(module, MultiHeadAttention):
+        nn.init.xavier_uniform_(module.W_q.weight)
+        nn.init.xavier_uniform_(module.W_k.weight)
+        nn.init.xavier_uniform_(module.W_v.weight)
+        nn.init.xavier_uniform_(module.W_o.weight)
