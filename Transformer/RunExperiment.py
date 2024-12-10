@@ -15,15 +15,6 @@ stacked = X.stack().unique()
 unique = stacked.shape[0]
 weights = getWeights(data)
 
-import itertools
-import torch
-from torch.utils.data import DataLoader, TensorDataset
-from sklearn.model_selection import KFold
-from scipy.stats import pearsonr
-import pandas as pd
-import csv
-from concurrent.futures import ProcessPoolExecutor
-
 # Parameter grid
 d_modelList = [100, 300, 500]
 num_headsList = [1, 2, 5]
