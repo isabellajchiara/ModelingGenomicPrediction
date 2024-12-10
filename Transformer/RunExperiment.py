@@ -13,6 +13,7 @@ y = data['Days to flowering']
 ''' find the vocab size '''
 stacked = X.stack().unique()
 unique = stacked.shape[0]
+weights = getWeights(data)
 
 model, accuracy = trainTest5Fold(X,y)
 
