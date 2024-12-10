@@ -49,12 +49,12 @@ def trainTest5Fold(X,y):
 
         src_vocab_size = int(unique)
         tgt_vocab_size = 1
-        d_model = 50
-        num_heads = 5
-        num_layers = 2
-        d_ff = 100
+        d_model = d_model
+        num_heads = num_heads
+        num_layers = num_layers
+        d_ff = d_ff
         max_seq_length = X.shape[1]
-        dropout = 0.05
+        dropout = dropout
 
         transformer = Transformer(src_vocab_size, tgt_vocab_size, d_model, num_heads, num_layers, d_ff, max_seq_length, dropout)
         transformer.apply(initialize_attention_weights)
