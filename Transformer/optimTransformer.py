@@ -1,38 +1,6 @@
-''' Load dependencies '''
-exec(open("dependencies.py").read())
-exec(open("transformerBlocks.py").read())
-exec(open("transformerBuild.py").read())
 
 
-import itertools
-import torch
-from torch.utils.data import DataLoader, TensorDataset
-from sklearn.model_selection import KFold
-from scipy.stats import pearsonr
-import pandas as pd
-import csv
-from concurrent.futures import ProcessPoolExecutor
-
-# Load data
-data = pd.read_csv("DF_Data.csv")
-X = data.drop(['Unnamed: 0', 'IDS', 'Days to flowering'], axis=1)
-y = data['Days to flowering']
-
-# Find the vocab size
-stacked = X.stack().unique()
-unique = stacked.shape[0]
-
-# Parameter grid
-d_modelList = [100, 300, 500]
-num_headsList = [1, 2, 5]
-num_layersList = [2, 3, 5]
-d_ffList = [100, 300, 500]
-dropoutList = [0.01, 0.05, 0.1]
-lrList = [0.001, 0.01, 0.1]
-
-param_grid = list(itertools.product(d_modelList, num_headsList, num_layersList, d_ffList, dropoutList, lrList))
-
-def train_and_evaluate(params):
+def OptimizeTransformer(params):
     d_model, num_heads, num_layers, d_ff, dropout, lr = params
 
     accuracies = []  # Store accuracies for each k-fold
