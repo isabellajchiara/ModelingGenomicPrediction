@@ -15,7 +15,7 @@ stacked = X.stack().unique()
 unique = stacked.shape[0]
 weights = getWeights(data)
 
-'' define params to test'''
+''' define params to test'''
 d_modelList = [100, 300, 500]
 num_headsList = [1, 2, 5]
 num_layersList = [2, 3, 5]
