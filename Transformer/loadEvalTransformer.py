@@ -13,8 +13,8 @@ unique = stacked.shape[0]
 
 src_vocab_size = int(unique)
 tgt_vocab_size = 1
-d_model = 50
-num_heads = 5
+d_model = 250
+num_heads = 1
 num_layers = 2
 d_ff = 100
 max_seq_length = X.shape[1]
