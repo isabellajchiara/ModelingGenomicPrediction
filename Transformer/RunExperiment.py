@@ -1,40 +1,107 @@
+import csv
+from sklearn.model_selection import KFold
+from torch.utils.data import TensorDataset, DataLoader
+import torch.nn as nn
+import torch
+import pandas as pd
+from scipy.stats import pearsonr
+
 ''' Load dependencies '''
 exec(open("dependencies.py").read())
 exec(open("transformerBlocks.py").read())
 exec(open("transformerBuild.py").read())
 
-''' Load data '''
-data = pd.read_csv("DF_Data.csv")
+'''Load data'''
+data = pd.read_csv("SY_Data.csv")
 
-''' X Y split '''
 X = data.drop(['Unnamed: 0', 'IDS', 'Days to flowering'], axis=1)
 y = data['Days to flowering']
 
-''' find the vocab size '''
+'''find the vocab size '''
 stacked = X.stack().unique()
 unique = stacked.shape[0]
-weights = getWeights(data)
 
-''' define params to test'''
-d_modelList = [100, 300, 500]
-num_headsList = [1, 2, 5]
-num_layersList = [2, 3, 5]
-d_ffList = [100, 300, 500]
-dropoutList = [0.01, 0.05, 0.1]
-lrList = [0.001, 0.01, 0.1]
+accuracies = []  # Store accuracies for each k-fold
+kf = KFold(n_splits=5, shuffle=True, random_state=100)  # Cross-validation
 
-'''test and select params'''
-param_grid = list(itertools.product(d_modelList, num_headsList, num_layersList, d_ffList, dropoutList, lrList))
-params = optimizeTransformer(params)
-params
+loss_values = []  # Store loss values across all epochs
 
-d_model = d_model
-num_heads = num_heads
-num_layers = num_layers
-d_ff=  d_ff
-dropout = dropout
-lr = lr
+# 5-fold cross-validation
+for train_index, test_index in kf.split(X):
 
-'''train and test optimized model using 5 fold cv'''
-model, accuracy = trainTest5Fold(X,y)
+    # train rest split for k fold
+    xTrain, xTest = X.iloc[train_index], X.iloc[test_index]
+    yTrain, yTest = y.iloc[train_index], y.iloc[test_index]
 
+    xTrain = torch.tensor(xTrain.values, dtype=torch.int64)
+    yTrain = torch.tensor(yTrain.values, dtype=torch.float32)
+    xTest = torch.tensor(xTest.values, dtype=torch.int64)
+    yTest = torch.tensor(yTest.values, dtype=torch.float32)    
+
+    train_dataset = TensorDataset(xTrain, yTrain)
+
+    batch_size = 10  # Choose an appropriate batch size
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+
+    src_vocab_size = int(unique)
+    tgt_vocab_size = 1
+    d_model = 250
+    num_heads = 1
+    num_layers = 2
+    d_ff = 100
+    max_seq_length = X.shape[1]
+    dropout = 0.05
+
+    transformer = Transformer(src_vocab_size, tgt_vocab_size, d_model, num_heads, num_layers, d_ff, max_seq_length, dropout)
+    transformer.apply(initialize_attention_weights)
+
+    criterion = nn.MSELoss()
+    optimizer = torch.optim.Adam(transformer.parameters(), lr=0.001)
+
+    for epoch in range(100):
+        transformer.train()
+        epoch_loss = 0
+
+        for batch_x, batch_y in train_loader:
+            optimizer.zero_grad()
+            estimations = transformer(batch_x)
+            loss = criterion(estimations, batch_y)
+            loss.backward()
+            optimizer.step()
+
+            epoch_loss += loss.item()
+
+        avg_epoch_loss = epoch_loss / len(train_loader)
+        loss_values.append(avg_epoch_loss)
+            
+
+    torch.save(transformer, "transformerSY.pth")
+
+    transformer.eval()
+    with torch.no_grad():
+        prediction = transformer(xTest)
+
+    prediction_np = prediction.numpy()
+    yTest_np = yTest.numpy()
+    accuracy, _ = pearsonr(prediction_np, yTest_np)
+    accuracies.append(accuracy)
+    print(accuracies)
+
+
+result = sum(accuracies) / len(accuracies)
+
+print(result)
+
+loss_csv_file = f"loss_values_optim1.csv"
+with open(loss_csv_file, mode='w', newline='') as file:
+     writer = csv.writer(file)
+     writer.writerow(["Epoch", "Loss"])  # Add headers\
+     for i, loss in enumerate(loss_values):
+         writer.writerow([i + 1, loss])   
+    
+
+print(f"Loss values saved to {loss_csv_file}")
+
+
+Results_df = pd.DataFrame({"Mean Accuracy": [result]})
+Results_df.to_csv("SY_Optim1_result.csv", index=False)
