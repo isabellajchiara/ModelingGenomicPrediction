@@ -101,3 +101,5 @@ def initialize_attention_weights(module):
         nn.init.xavier_uniform_(module.W_k.weight)
         nn.init.xavier_uniform_(module.W_v.weight)
         nn.init.xavier_uniform_(module.W_o.weight)
+
+
