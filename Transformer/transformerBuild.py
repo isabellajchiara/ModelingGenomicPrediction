@@ -16,9 +16,8 @@ class Transformer(nn.Module):
         for layer in self.encoder_layers:
             src_embedded = layer(src_embedded)
         output = self.fc(src_embedded)
-        #weights = SNP weights
-        #output = torch.sum(model_output * weights, dim=1)
+        print(output)
         outputReshape = output.view(src.shape[0], -1)
+        print(outputReshape)
         pred, _ = torch.max(outputReshape, dim=1)#collapse 2nd dimension of output 
         return pred
-
