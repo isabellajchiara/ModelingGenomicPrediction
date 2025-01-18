@@ -13,7 +13,7 @@ unique = stacked.shape[0]
 
 src_vocab_size = int(unique)
 tgt_vocab_size = 1
-d_model = 100
+d_model = 400
 num_heads = 2
 num_layers = 5
 d_ff = 100
@@ -25,7 +25,7 @@ dropout = 0.05
 transformer = Transformer(src_vocab_size, tgt_vocab_size, d_model, num_heads, num_layers, d_ff, max_seq_length, dropout)
 
 #load the pretrained weights 
-transformer = torch.load("transformerSY.pth")
+transformer = torch.load("transformerSY_Final.pth")
 
 #put in eval mode
 transformer.eval()
