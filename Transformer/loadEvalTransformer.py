@@ -2,11 +2,17 @@
 exec(open("dependencies.py").read())
 exec(open("transformerBlocks.py").read())
 exec(open("transformerBuild.py").read())
+from sklearn.preprocessing import StandardScaler
 
 data = pd.read_csv("SY_Data.csv")
 
 X = data.drop(['Unnamed: 0','IDS','Yield'], axis=1)
 y = data['Yield']
+
+# Scale and center the response variable
+scaler = StandardScaler()
+y = scaler.fit_transform(y.values.reshape(-1, 1)).flatten()
+y = pd.DataFrame(y)
 
 stacked = X.stack().unique()
 unique = stacked.shape[0]
@@ -16,7 +22,7 @@ tgt_vocab_size = 1
 d_model = 400
 num_heads = 2
 num_layers = 5
-d_ff = 100
+d_ff = 50
 max_seq_length = X.shape[1]
 dropout = 0.05
 
